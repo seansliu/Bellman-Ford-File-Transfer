@@ -1,8 +1,6 @@
 Bellman-Ford File Transfer Host
-written by Sean Liu sl3497
+written by Sean Liu
 
-
-NOTES: I am using my late days for this assignment!
 
 INTRODUCTION
 
@@ -40,8 +38,7 @@ stdin when the user entered a command. To automatically udpate the network
 information, I had the host send ROUTE_UPDATE messages anytime the forwarding 
 table was updated and every TIMEOUT. When receiving a ROUTE_UPDATE message, the 
 host first updates the link between itself and the sender neighbor, then the 
-rest of the table. I also implemented poison reverse as specified in the 
-assignment. Once the Bellman-Ford algorithm was successfully implemented, file 
+rest of the table. I also implemented poison reverse. Once the Bellman-Ford algorithm was successfully implemented, file 
 transfer was simple. My program creates a header, with sequence number, and 
 sends the file in packets, hop by hop. To save file information, the 
 destination saves the packets in a dictionary, only reconstructing the file 
@@ -56,7 +53,7 @@ I placed all constants in configuration.py. Therefore, if a user/admin wants
 to change these settings, one just has to open this file and alter its values.
 
 Host and Neighbor Specifications - clientN.txt
-clientN.txt files contain information as specified in the assignment to 
+clientN.txt files contain information to 
 initialize a host. The host reads the file and initializes its information. To
 speed up the updating process, I used TIMEOUT value of 5 in my client files.
 
@@ -83,9 +80,3 @@ The user can use the following commands:
 - CLOSE
 	terminates the host
 
-
-TEST CASES
-
-I have attached clientN.txt files for testing. They contain information for 
-the test case specified in the assignment PDF. Use any file for file 
-transmission testing.
